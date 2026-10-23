@@ -16,7 +16,7 @@ public class Meteoro extends Asset {
         this.poder = this.tamanho;
 
         String path = "images/meteoro/meteoro" + tamanho + ".png";
-        setImagem(new ImageView(App.class.getResource(path).toString()));
+        setImagem(new ImageView(App.class.getResource(path).toExternalForm()));
 
     }
 

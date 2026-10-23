@@ -19,22 +19,20 @@ public abstract class Asset {
     }
 
     public void mover() {
-        if (direcao == Direcao.CIMA) {
-            this.y -= velocidade;
-        } else if (direcao == Direcao.BAIXO) {
-            this.y += velocidade;
-
+        if (direcao == Direcao.DIREITA) {
+            x += velocidade;
         } else if (direcao == Direcao.ESQUERDA) {
-            this.x -= velocidade;
-        } else if (direcao == Direcao.DIREITA) {
-            this.x += velocidade;
+            x -= velocidade;
+        } else if (direcao == Direcao.CIMA) {
+            y -= velocidade;
+        } else if (direcao == Direcao.BAIXO) {
+            y += velocidade;
         }
-
     }
 
-    public boolean colidiuCom(Asset asset){
+    public boolean colidiuCom(Asset asset) {
         return x < asset.getX() + 50 && x + 50 > asset.getX() &&
-               y < asset.getY() + 50 && y + 50 > asset.getY();
+                y < asset.getY() + 50 && y + 50 > asset.getY();
 
     }
 
