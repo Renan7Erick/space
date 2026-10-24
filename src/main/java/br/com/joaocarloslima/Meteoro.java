@@ -1,15 +1,14 @@
 package br.com.joaocarloslima;
 
-import javafx.scene.image.ImageView;
-
 import java.util.Random;
+
+import javafx.scene.image.ImageView;
 
 public class Meteoro extends Asset {
     private int tamanho;
     private int poder;
 
     public Meteoro(int x, int y, int velocidade, Direcao direcao) {
-
         super(x, y, velocidade, direcao);
         Random random = new Random();
         this.tamanho = random.nextInt(8) + 1;
@@ -17,7 +16,6 @@ public class Meteoro extends Asset {
 
         String path = "images/meteoro/meteoro" + tamanho + ".png";
         setImagem(new ImageView(App.class.getResource(path).toExternalForm()));
-
     }
 
     public void tomarTiro(Tiro tiro) {

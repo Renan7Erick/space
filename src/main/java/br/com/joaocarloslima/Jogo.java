@@ -14,14 +14,13 @@ public class Jogo {
     public Jogo() {
         this.assets = new ArrayList<>();
         this.nave = new Nave(280, 400, 10, Direcao.DIREITA);
-        this.assets.add(this.nave);
         this.pontos = 0;
         this.nivel = 1;
-
     }
 
     public Tiro atirar() {
-        Tiro tiro = nave.atirar(1);
+
+        Tiro tiro = nave.atirar(getNivel());
         assets.add(tiro);
         return tiro;
     }
@@ -60,5 +59,5 @@ public class Jogo {
         return nivel;
     }
 
-    
+
 }

@@ -2,7 +2,6 @@ package br.com.joaocarloslima;
 
 import javafx.scene.image.ImageView;
 
-
 public abstract class Asset {
     private int x;
     private int y;
@@ -15,7 +14,6 @@ public abstract class Asset {
         this.y = y;
         this.velocidade = velocidade;
         this.direcao = direcao;
-
     }
 
     public void mover() {
@@ -31,9 +29,19 @@ public abstract class Asset {
     }
 
     public boolean colidiuCom(Asset asset) {
-        return x < asset.getX() + 50 && x + 50 > asset.getX() &&
-                y < asset.getY() + 50 && y + 50 > asset.getY();
+        return x < asset.getX() + 50 &&
+                x + 50 > asset.getX() &&
+                y < asset.getY() + 50 &&
+                y + 50 > asset.getY();
+    }
 
+    // Gets e Sets
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
     }
 
     public int getY() {
@@ -42,14 +50,6 @@ public abstract class Asset {
 
     public void setY(int y) {
         this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
     }
 
     public ImageView getImagem() {
@@ -75,6 +75,4 @@ public abstract class Asset {
     public void setDirecao(Direcao direcao) {
         this.direcao = direcao;
     }
-
-
 }
